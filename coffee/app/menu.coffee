@@ -2,33 +2,29 @@
 
 define [
   'classie'
-], (classie) ->
+  './helper/selector'
+], (
+  classie,
+  $
+) ->
 
-  d = document;
-  $ = (el) -> d.querySelector el
-
-  nav = $ '.nav-container'
-  appbar = $ '.app-bar'
-  menuBtn = $ '.menu'
+  nav = $ '.nav'
+  bar = $ '.bar'
+  menu = $ '.menu'
   main = $ 'main'
-  body = d.body || $ 'body'
+  body = document.body || $ 'body'
 
   closeMenu = ->
-    els = [body, appbar, nav]
+    els = [body, bar, nav, menu]
     classie.remove el, 'open' for el in els
     return
 
   toggleMenu = ->
-    els = [body, appbar, nav]
+    els = [body, bar, nav, menu]
     classie.toggle el, 'open' for el in els
-    classie.add nav, 'opened'
     return
 
   main.addEventListener 'click', closeMenu
-  menuBtn.addEventListener 'click', toggleMenu
-  nav.addEventListener 'click', (event) ->
-    if event.target.nodeName == 'A' or event.target.nodeName == 'LI'
-      closeMenu()
-    return
+  menu.addEventListener 'click', toggleMenu
 
   return

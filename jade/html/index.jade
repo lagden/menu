@@ -12,28 +12,27 @@ html
     else
       script(src='/js/lib/require.js', data-main='/js/main', async)
   body
-    header.app-bar.promote-layer
-      .app-bar-container
+    header.bar.promote-layer
+      .bar-container
         button.menu
-          | Menu
-          //- img(src='images/hamburger.svg' alt='Menu')
+          span.menu__burguer
 
-    nav.nav-container.promote-layer
+    nav.nav.promote-layer
       h4 Navigation
         ul
           li
             a(href='#foo') Foo
           li
-            a(href='#Bar') Bar
+            a(href='#bar') Bar
           li
-            a(href='#xxx') Xxx
+            a(href='#xxx') Porn
 
     main
       article
         h1 Basic App
         - var n = 0
         ul
-          while n < 50
+          while n < 90
             li= n++
         p Making a better and awesome web!!!
         #info

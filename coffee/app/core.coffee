@@ -1,12 +1,13 @@
 'use strict'
 
 define [
-  'templates/sample',
+  'templates/sample'
+  './helper/selector'
   './menu'
-], (template) ->
-
-  d = document;
-  $ = (el) -> d.querySelector el
+], (
+  template,
+  $
+) ->
 
   $info = $ '#info'
   $info.insertAdjacentHTML 'afterbegin', template

@@ -1,7 +1,15 @@
-Basic Awesome APP
-=================
+Menu Test
+=========
 
-Making a better and awesome web!!!
+This is a part of the [Web Starter Kit](https://developers.google.com/web/starter-kit), menu piece to be exact!
+
+## Install
+
+    npm i
+
+## Usage
+
+    grunt serve
 
 ## Credit
 
