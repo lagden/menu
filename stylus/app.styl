@@ -1,0 +1,68 @@
+@charset "UTF-8"
+
+@import 'stick/function'
+@import 'stick/mixin'
+
+$cor1 = #FFF
+$cor2 = #000
+$cor3 = #00F
+
+html, body
+  margin 0
+  padding 0
+
+html
+  monospace()
+  min-height 100%
+
+  color gray
+  background-color white
+
+body
+  position relative
+  &.open
+    overflow hidden
+
+.promote-layer
+  backface-visibility hidden
+
+.app-bar
+  position fixed
+  top 0
+  left 0
+  display block
+  width 100%
+  background-color $cor3
+  overflow hidden
+  z-index 1
+
+.app-bar-container
+  width 100%
+  height 60px
+  position relative
+  display flex
+  flex-direction row
+  margin 0 auto
+
+.app-bar.open,
+.app-bar.open ~ main
+  transform translate(250px, 0)
+
+.nav-container
+  z-index 1
+  position fixed
+  top 0
+  bottom 0
+  width 250px
+  height 100%
+  background-color #3367D6
+  color #fefefe
+  transform translate(-250px, 0)
+  overflow-y auto
+  &.open
+    transform translate(0, 0)
+
+.app-bar,
+.nav-container.opened,
+main
+  transition transform 0.3s ease-out
